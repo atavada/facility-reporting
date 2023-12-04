@@ -105,6 +105,9 @@ model Post {
 
   comments    Comment[]
   votes       Vote[]
+
+  isRepaired  Boolean   @default(false)
+  responsible String?
 }
 
 model Comment {
