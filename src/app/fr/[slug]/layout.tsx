@@ -64,18 +64,18 @@ const Layout = async ({
 
 					<div className='hidden md:block overflow-hidden h-fit rounded-lg broder border-gray-200 order-first md:order-last'>
 						<div className='px-6 py-4 '>
-							<p className='font-semibold py-3'>About {report.name}</p>
+							<p className='font-semibold py-3'>About Gedung {report.name}</p>
 						</div>
 
 						<dl className='divide-y divide-gray-100 px-6 py-4 text-sm leading-6 bg-white'>
-							<div className='flex justify-between gap-x-4 py-3'>
+							{/* <div className='flex justify-between gap-x-4 py-3'>
 								<dt className='text-gray-500'>Created</dt>
 								<dd className='text-gray-700'>
 									<time dateTime={report.createdAt.toDateString()}>
 										{format(report.createdAt, "d MMMM yyyy")}
 									</time>
 								</dd>
-							</div>
+							</div> */}
 
 							<div className='flex justify-between gap-x-4 py-3'>
 								<dt className='text-gray-500'>Followed by</dt>
