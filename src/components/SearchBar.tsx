@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useCallback, useState } from "react";
+import { FC, useCallback, useRef, useState } from "react";
 import {
 	Command,
 	CommandInput,
@@ -15,12 +15,14 @@ import { Prisma, Report } from "@prisma/client";
 import { useRouter } from "next/navigation";
 import { Building } from "lucide-react";
 import debounce from "lodash.debounce";
+import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 
 interface SearchBarProps {}
 
 const SearchBar: FC<SearchBarProps> = ({}) => {
 	const [input, setInput] = useState<string>("");
 	const router = useRouter();
+	const commandRef = useRef<HTMLDivElement>(null);
 
 	const request = debounce(async () => {
 		refetch();
@@ -47,15 +49,22 @@ const SearchBar: FC<SearchBarProps> = ({}) => {
 		enabled: false,
 	});
 
+	useOnClickOutside(commandRef, () => {
+		setInput("");
+	});
+
 	return (
-		<Command className='relative rounded-lg max-w-lg z-50 overflow-visible'>
+		<Command
+			ref={commandRef}
+			className='relative rounded-lg max-w-lg z-50 overflow-visible bg-slate-100'
+		>
 			<CommandInput
 				value={input}
 				onValueChange={(text) => {
 					setInput(text);
 					debounceRequest();
 				}}
-				className='outline-none border-none focus:border-none focus:outline-none ring-0'
+				className='outline-none border-none focus:border-none focus:outline-none ring-0 bg-slate-100'
 				placeholder='Search report location "B12"...'
 			/>
 			{input.length > 0 ? (

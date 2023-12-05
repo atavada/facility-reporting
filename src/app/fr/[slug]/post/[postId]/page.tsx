@@ -1,13 +1,14 @@
+import BackModal from "@/components/BackModal";
 import CommentsSection from "@/components/CommentsSection";
 import EditorOutput from "@/components/EditorOutput";
 import PostVoteServer from "@/components/post-vote/PostVoteServer";
-import { buttonVariants } from "@/components/ui/Button";
+import { Button, buttonVariants } from "@/components/ui/Button";
 import { db } from "@/lib/db";
 import { redis } from "@/lib/redis";
 import { formatTimeToNow } from "@/lib/utils";
 import { CachedPost } from "@/types/redis";
 import { Post, User, Vote } from "@prisma/client";
-import { ArrowBigDown, ArrowBigUp, Loader2 } from "lucide-react";
+import { ArrowBigDown, ArrowBigUp, ChevronLeft, Loader2 } from "lucide-react";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -43,6 +44,8 @@ const page = async ({ params }: PageProps) => {
 
 	return (
 		<div>
+			<BackModal />
+			<hr className='my-5' />
 			<div className='h-fulll flex flex-col sm:flex-row items-center sm:items-start justify-between'>
 				<Suspense fallback={<PostVoteShell />}>
 					{/* @ts-expect-error server component */}

@@ -3,10 +3,22 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import { ArrowUpDown } from "lucide-react";
 
 export const column: ColumnDef<any>[] = [
 	{
 		accessorKey: "votes",
+		// header: ({ column }) => {
+		// 	return (
+		// 		<Button
+		// 			variant='ghost'
+		// 			onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+		// 		>
+		// 			Vote
+		// 			<ArrowUpDown className='ml-2 h-4 w-4' />
+		// 		</Button>
+		// 	);
+		// },
 		header: "Vote",
 		cell: ({ row }) => {
 			const votes = row.original.votes;

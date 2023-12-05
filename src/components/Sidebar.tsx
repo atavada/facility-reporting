@@ -68,7 +68,7 @@ export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
 							</Link>
 						</div>
 					</div>
-					<div className='px-4 py-2'>
+					{/* <div className='px-4 py-2'>
 						<hr className='mb-2 h-0.5 bg-stone-900' />
 						<div className='space-y-1'>
 							<Link href='/dashboard/user'>
@@ -82,7 +82,7 @@ export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
 								</Button>
 							</Link>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</>
