@@ -8,7 +8,6 @@ import axios, { AxiosError } from "axios";
 import { useCustomToast } from "@/hooks/use-custom-toast";
 import { toast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
-import { unsubscribe } from "diagnostics_channel";
 
 interface SubscribeLeaveToggleProps {
 	reportId: string;

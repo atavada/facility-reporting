@@ -29,7 +29,7 @@ export default function RootLayout({
 		>
 			<body className='min-h-screen pt-12 bg-slate-50 antialiased'>
 				<Providers>
-					{/* err server components */}
+					{/* @ts-expect-error server component */}
 					<Navbar />
 
 					{authModal}

@@ -16,8 +16,8 @@ export default async function Layout({ children }: { children: ReactNode }) {
 							<div className='absolute'>
 								<div className=''>
 									<h1 className='my-2 text-gray-800 font-bold text-2xl'>
-										"Looks like you&quot;ve found the doorway to the great
-										nothing"
+										&quot;Looks like you&apos;ve found the doorway to the great
+										nothing&quot;
 									</h1>
 									<p className='my-2 text-gray-800'>
 										Sorry about that! Please visit our hompage to get where you
