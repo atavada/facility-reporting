@@ -46,7 +46,7 @@ const Post: FC<PostProps> = ({
 									className='underline text-zinc-900 text-sm underline-offset-2'
 									href={`/fr/${reportName}`}
 								>
-									{reportName}
+									Gedung {reportName}
 								</a>
 								<span className='px-1'>•</span>
 							</>

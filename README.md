@@ -1,4 +1,4 @@
-# Facility Reporting
+# Facility Reporting | SIPERU
 
 Built with the Next.js App Router, TypeScript, & Tailwind
 
@@ -9,11 +9,7 @@ Built with the Next.js App Router, TypeScript, & Tailwind
 - Custom feed for authenticated users
 - Optimistic updates for a great user experience
 - Modern data fetching using React-Query
-- A beautiful and highly functional post editor
 - Image uploads & link previews
 - Full comment functionality with nested replies
+- Dashboard for admin
 - ... and much more
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
