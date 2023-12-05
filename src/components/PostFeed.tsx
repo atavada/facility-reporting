@@ -76,7 +76,7 @@ const PostFeed: FC<PostFeedProps> = ({ initialPosts, reportName }) => {
 				} else {
 					return (
 						<Post
-							// key={post.id}
+							key={post.id}
 							currentVote={currentVote}
 							votesAmt={votesAmt}
 							commentAmt={post.comments.length}
