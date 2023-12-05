@@ -55,7 +55,7 @@ export function DataTable<TData, TValue>({
 					className='max-w-sm'
 				/>
 			</div>
-			<div className='rounded-md border bg-white'>
+			<div className='rounded-md border bg-white mb-3'>
 				<Table>
 					<TableHeader>
 						{table.getHeaderGroups().map((headerGroup) => (
@@ -105,7 +105,7 @@ export function DataTable<TData, TValue>({
 					</TableBody>
 				</Table>
 			</div>
-			{/* <DataTablePagination table={table} /> */}
+			<DataTablePagination table={table} />
 		</div>
 	);
 }

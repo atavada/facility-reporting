@@ -6,7 +6,7 @@ import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 
 export const metadata = {
-	title: "Facility Reporting",
+	title: "SIPERU",
 	description: "A Facility Reporting App built with Next.js and TypeScript.",
 };
 

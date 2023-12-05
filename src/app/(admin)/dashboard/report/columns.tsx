@@ -33,6 +33,14 @@ export const column: ColumnDef<any>[] = [
 	{ accessorKey: "title", header: "Title" },
 	{ accessorKey: "report.name", header: "Lokasi" },
 	{
+		accessorKey: "isRepaired",
+		header: "Status",
+		cell: ({ row }) => {
+			const isRepaired = row.original.isRepaired;
+			return <span>{isRepaired ? "Sudah dipebaiki" : "Belum diperbaiki"}</span>;
+		},
+	},
+	{
 		accessorKey: "createdAt",
 		header: "Tanggal dilaporkan",
 		cell: ({ row }) => {
@@ -45,11 +53,15 @@ export const column: ColumnDef<any>[] = [
 		},
 	},
 	{
-		accessorKey: "isRepaired",
-		header: "Status",
+		accessorKey: "updatedAt",
+		header: "Tanggal diperbaiki",
 		cell: ({ row }) => {
-			const isRepaired = row.original.isRepaired;
-			return <span>{isRepaired ? "Sudah dipebaiki" : "Belum diperbaiki"}</span>;
+			const date = new Date(row.original.createdAt);
+			const formattedDate = `${date.getDate()} ${new Intl.DateTimeFormat(
+				"id-ID",
+				{ month: "long" }
+			).format(date)} ${date.getFullYear()}`;
+			return <span>{formattedDate}</span>;
 		},
 	},
 	{
