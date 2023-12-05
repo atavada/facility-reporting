@@ -1,15 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { usePathname } from "next/navigation";
-import {
-	LayoutGrid,
-	User,
-	FileText,
-	ClipboardList,
-	Archive,
-	Home,
-} from "lucide-react";
+import { LayoutGrid, User, ClipboardList, Home } from "lucide-react";
 
 export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
 	const pathname = usePathname();
@@ -57,7 +52,9 @@ export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
 							<Link href='/dashboard/report'>
 								<Button
 									variant={
-										pathname == "/dashboard/report" ? "default" : "ghost"
+										pathname.startsWith("/dashboard/report")
+											? "default"
+											: "ghost"
 									}
 									size='sm'
 									className='w-full justify-start'
