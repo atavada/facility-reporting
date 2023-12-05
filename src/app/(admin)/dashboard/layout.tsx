@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Sidebar } from "@/components/Sidebar";
 import { getAuthSession } from "@/lib/auth";
+import Image from "next/image";
 
 export const dynamic = "force-dynamic";
 export default async function Layout({ children }: { children: ReactNode }) {
@@ -15,7 +16,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
 							<div className='absolute'>
 								<div className=''>
 									<h1 className='my-2 text-gray-800 font-bold text-2xl'>
-										"Looks like you&apos;ve found the doorway to the great
+										"Looks like you&quot;ve found the doorway to the great
 										nothing"
 									</h1>
 									<p className='my-2 text-gray-800'>
@@ -28,12 +29,15 @@ export default async function Layout({ children }: { children: ReactNode }) {
 								</div>
 							</div>
 							<div>
-								<img src='https://i.ibb.co/G9DC8S0/404-2.png' />
+								<Image
+									alt='error-img-1'
+									src='https://i.ibb.co/G9DC8S0/404-2.png'
+								/>
 							</div>
 						</div>
 					</div>
 					<div>
-						<img src='https://i.ibb.co/ck1SGFJ/Group.png' />
+						<Image alt='error-img-2' src='https://i.ibb.co/ck1SGFJ/Group.png' />
 					</div>
 				</div>
 			</>
