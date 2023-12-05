@@ -15,7 +15,7 @@ import { signOut } from "next-auth/react";
 import { LogOut } from "lucide-react";
 
 interface UserAccountNavProps {
-	user: Pick<User, "name" | "image" | "email">;
+	user: Pick<User, "name" | "image" | "email" | "role">;
 }
 
 const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
@@ -45,9 +45,14 @@ const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
 
 					<DropdownMenuSeparator />
 
-					<DropdownMenuItem asChild>
-						<Link href='/dashboard'>Dashboard</Link>
-					</DropdownMenuItem>
+					{user.role === "ADMIN" && (
+						<DropdownMenuItem
+							asChild
+							className='bg-[#0861f2] text-white focus:bg-[#0456db] focus:text-white'
+						>
+							<Link href='/dashboard'>Dashboard</Link>
+						</DropdownMenuItem>
+					)}
 					<DropdownMenuItem asChild>
 						<Link href='/'>Feed</Link>
 					</DropdownMenuItem>
