@@ -107,9 +107,6 @@ model Post {
   votes       Vote[]
 
   isRepaired    Boolean   @default(false)
-  time_repaired DateTime
-
-  responsible   String?
 }
 
 model Comment {
