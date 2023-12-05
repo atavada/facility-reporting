@@ -39,7 +39,9 @@ const page = async ({ params }: PageProps) => {
 
 	return (
 		<>
-			<h1 className='font-bold test-3xl md:text-4xl h-14'>{report.name}</h1>
+			<h1 className='font-bold test-3xl md:text-4xl h-14'>
+				Gedung {report.name}
+			</h1>
 			<MiniCreatePost session={session} />
 			<PostFeed initialPosts={report.posts} reportName={report.name} />
 		</>
