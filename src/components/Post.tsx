@@ -27,7 +27,7 @@ const Post: FC<PostProps> = ({
 	currentVote,
 }) => {
 	const pRef = useRef<HTMLDivElement>(null);
-	console.log(post);
+	// console.log(post);
 
 	return (
 		<div className='rounded-md bg-white shadow'>

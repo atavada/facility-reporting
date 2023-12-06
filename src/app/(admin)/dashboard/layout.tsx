@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { Sidebar } from "@/components/Sidebar";
-import { getAuthSession } from "@/lib/auth";
 import Image from "next/image";
+import { getServerSession } from "next-auth";
 
 export const dynamic = "force-dynamic";
 export default async function Layout({ children }: { children: ReactNode }) {
-	const session = await getAuthSession();
+	const session = await getServerSession();
 
 	if (session?.user?.role !== "ADMIN") {
 		return (

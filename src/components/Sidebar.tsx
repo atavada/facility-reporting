@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { usePathname } from "next/navigation";
-import { LayoutGrid, User, ClipboardList, Home } from "lucide-react";
+import { LayoutGrid, ClipboardList, Home } from "lucide-react";
 
 export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
 	const pathname = usePathname();

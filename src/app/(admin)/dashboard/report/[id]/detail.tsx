@@ -28,7 +28,7 @@ export default function Detail({ params }: { params: any }) {
 				const fetchedData = await res.json();
 				setPost(fetchedData);
 			} catch (error) {
-				console.error("Error fetching data:", error);
+				// console.error("Error fetching data:", error);
 			} finally {
 				setIsLoading(false);
 			}
@@ -73,7 +73,7 @@ export default function Detail({ params }: { params: any }) {
 		);
 	}
 
-	console.log(post);
+	// console.log(post);
 
 	return (
 		<>
