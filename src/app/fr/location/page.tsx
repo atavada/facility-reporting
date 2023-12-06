@@ -2,6 +2,9 @@ import { buttonVariants } from "@/components/ui/Button";
 import { db } from "@/lib/db";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 const Page = async () => {
 	const locations = await db.report.findMany();
 
