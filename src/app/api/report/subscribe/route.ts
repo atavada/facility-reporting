@@ -18,6 +18,7 @@ export async function POST(req: Request) {
 		const subscribtionExists = await db.subscription.findFirst({
 			where: {
 				reportId,
+				// @ts-ignore
 				userId: session.user.id,
 			},
 		});
@@ -29,6 +30,7 @@ export async function POST(req: Request) {
 		await db.subscription.create({
 			data: {
 				reportId,
+				// @ts-ignore
 				userId: session.user.id,
 			},
 		});

@@ -73,7 +73,7 @@ export default function Detail({ params }: { params: any }) {
 		);
 	}
 
-	console.log(post);
+	// console.log(post);
 
 	return (
 		<>

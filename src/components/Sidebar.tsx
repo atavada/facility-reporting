@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { usePathname } from "next/navigation";
-import { LayoutGrid, User, ClipboardList, Home } from "lucide-react";
+import { LayoutGrid, ClipboardList, Home } from "lucide-react";
 
 export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
 	const pathname = usePathname();
@@ -65,21 +65,6 @@ export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
 							</Link>
 						</div>
 					</div>
-					{/* <div className='px-4 py-2'>
-						<hr className='mb-2 h-0.5 bg-stone-900' />
-						<div className='space-y-1'>
-							<Link href='/dashboard/user'>
-								<Button
-									variant={pathname == "/dashboard/user" ? "default" : "ghost"}
-									size='sm'
-									className='w-full justify-start'
-								>
-									<User className='mr-2 h-4 w-4' />
-									User
-								</Button>
-							</Link>
-						</div>
-					</div> */}
 				</div>
 			</div>
 		</>

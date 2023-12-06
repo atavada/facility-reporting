@@ -1,11 +1,8 @@
 import { buttonVariants } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
-import { useCustomToast } from "@/hooks/use-custom-toast";
 import { db } from "@/lib/db";
 import Link from "next/link";
 
 const Page = async () => {
-	const loginToast = useCustomToast();
 	const locations = await db.report.findMany();
 
 	return (
@@ -20,14 +17,6 @@ const Page = async () => {
 					<p className='text-xs'>
 						Select existing location for reporting a facilities.
 					</p>
-					{/* <Input
-						placeholder='Filter Location'
-						value={(table.getColumn("time")?.getFilterValue() as string) ?? ""}
-						onChange={(event) =>
-							table.getColumn("time")?.setFilterValue(event.target.value)
-						}
-						className='max-w-xs'
-					/> */}
 					<div className='relative'>
 						{/* List Location */}
 						<ul className='list-none'>

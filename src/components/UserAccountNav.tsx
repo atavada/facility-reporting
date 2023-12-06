@@ -15,6 +15,7 @@ import { signOut } from "next-auth/react";
 import { LogOut } from "lucide-react";
 
 interface UserAccountNavProps {
+	// @ts-ignore
 	user: Pick<User, "name" | "image" | "email" | "role">;
 }
 

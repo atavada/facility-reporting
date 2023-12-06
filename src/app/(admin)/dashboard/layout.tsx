@@ -7,6 +7,7 @@ export const dynamic = "force-dynamic";
 export default async function Layout({ children }: { children: ReactNode }) {
 	const session = await getAuthSession();
 
+	// @ts-ignore
 	if (session?.user?.role !== "ADMIN") {
 		return (
 			<>
@@ -30,14 +31,23 @@ export default async function Layout({ children }: { children: ReactNode }) {
 							</div>
 							<div>
 								<Image
-									alt='error-img-1'
 									src='https://i.ibb.co/G9DC8S0/404-2.png'
+									alt='error-img-1'
+									unoptimized
+									width={600}
+									height={400}
 								/>
 							</div>
 						</div>
 					</div>
 					<div>
-						<Image alt='error-img-2' src='https://i.ibb.co/ck1SGFJ/Group.png' />
+						<Image
+							src='https://i.ibb.co/ck1SGFJ/Group.png'
+							alt='error-img-2'
+							unoptimized
+							width={600}
+							height={400}
+						/>
 					</div>
 				</div>
 			</>

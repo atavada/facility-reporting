@@ -29,6 +29,7 @@ const Navbar = async () => {
 					<SearchBar />
 
 					{session?.user ? (
+						// @ts-ignore
 						<UserAccountNav user={session.user} />
 					) : (
 						<Link href='/sign-in' className={buttonVariants()}>
