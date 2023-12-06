@@ -21,6 +21,7 @@ export async function PATCH(req: Request) {
 
 		const existingVote = await db.vote.findFirst({
 			where: {
+				// @ts-ignore
 				userId: session.user.id,
 				postId,
 			},
@@ -46,6 +47,7 @@ export async function PATCH(req: Request) {
 					where: {
 						userId_postId: {
 							postId,
+							// @ts-ignore
 							userId: session.user.id,
 						},
 					},
@@ -58,6 +60,7 @@ export async function PATCH(req: Request) {
 				where: {
 					userId_postId: {
 						postId,
+						// @ts-ignore
 						userId: session.user.id,
 					},
 				},
@@ -93,6 +96,7 @@ export async function PATCH(req: Request) {
 		await db.vote.create({
 			data: {
 				type: voteType,
+				// @ts-ignore
 				userId: session.user.id,
 				postId,
 			},

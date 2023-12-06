@@ -2,8 +2,6 @@ import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 
 export async function GET(req: Request, { params: { id } }: any) {
-	const session = await getAuthSession();
-
 	const whereConditions = {
 		id: id as string,
 	};
@@ -28,8 +26,6 @@ export async function GET(req: Request, { params: { id } }: any) {
 }
 
 export async function PATCH(req: Request, { params: { id } }: any) {
-	const session = await getAuthSession();
-
 	const whereConditions = {
 		id: id as string,
 	};

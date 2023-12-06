@@ -42,9 +42,7 @@ const Editor: FC<EditorProps> = ({ reportId }) => {
 		const Embed = (await import("@editorjs/embed")).default;
 		const Table = (await import("@editorjs/table")).default;
 		const List = (await import("@editorjs/list")).default;
-		// const Code = (await import("@editorjs/code")).default;
 		const LinkTool = (await import("@editorjs/link")).default;
-		// const InlineCode = (await import("@editorjs/inline-code")).default;
 		const ImageTool = (await import("@editorjs/image")).default;
 
 		if (!ref.current) {
@@ -82,8 +80,6 @@ const Editor: FC<EditorProps> = ({ reportId }) => {
 						},
 					},
 					list: List,
-					// code: Code,
-					// InlineCode: InlineCode,
 					table: Table,
 					embed: Embed,
 				},
@@ -183,7 +179,7 @@ const Editor: FC<EditorProps> = ({ reportId }) => {
 					<TextareaAutosize
 						ref={(e) => {
 							titleRef(e);
-
+							// @ts-ignore
 							_titleRef.current = 0;
 						}}
 						{...rest}

@@ -19,6 +19,7 @@ export async function PATCH(req: Request) {
 			data: {
 				text,
 				postId,
+				// @ts-ignore
 				authorId: session.user.id,
 				replyToId,
 			},

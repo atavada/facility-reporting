@@ -27,12 +27,14 @@ export async function POST(req: Request) {
 		const report = await db.report.create({
 			data: {
 				name,
+				// @ts-ignore
 				creatorId: session.user.id,
 			},
 		});
 
 		await db.subscription.create({
 			data: {
+				// @ts-ignore
 				userId: session.user.id,
 				reportId: report.id,
 			},

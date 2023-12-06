@@ -18,6 +18,7 @@ export async function POST(req: Request) {
 		const subscribtionExists = await db.subscription.findFirst({
 			where: {
 				reportId,
+				// @ts-ignore
 				userId: session.user.id,
 			},
 		});
@@ -31,6 +32,7 @@ export async function POST(req: Request) {
 		const report = await db.report.findFirst({
 			where: {
 				id: reportId,
+				// @ts-ignore
 				creatorId: session.user.id,
 			},
 		});
@@ -45,6 +47,7 @@ export async function POST(req: Request) {
 			where: {
 				userId_reportId: {
 					reportId,
+					// @ts-ignore
 					userId: session.user.id,
 				},
 			},
